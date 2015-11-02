@@ -1,0 +1,263 @@
+html,body {
+	height:100%;
+	max-width:100%;
+	background-color: #363636;
+	margin:0;
+	padding:0;
+	font-size: 100%;
+}
+.container-fluid {
+	background-color: #363636;
+	color:#FBEFB3;
+	height:100%;
+	max-width: 100%;
+	padding:0;
+}
+h1 {
+	margin: 20px 0px; 
+	line-height: 1em;
+}
+h2 {
+	margin: 30px 0px 20px 0px; 
+	line-height: 1em;
+}
+h4 {
+	margin: 0px; 
+	line-height: 1em;
+	color:#FBEFB3;
+}
+.col-xs-12 {
+	height: 100%;
+	width:100%;
+	margin:0;
+}
+
+.scene {
+	height:100%;
+	width:100%;
+	margin: 0px;
+/*	border-bottom: black solid 1px;
+*/	padding:0 30px;
+}
+
+.left {
+	float:left;
+	width:50%;
+	height:100%;
+	align-items: center;
+}
+.right {
+	float:right;
+	width:50%;
+	height: 100%;
+	vertical-align: middle;
+}
+.spacer {
+	height:30%;
+	width:100%;
+}
+.spacer2 {
+	height:5%;
+	width:100%;
+}
+.spacer3{
+	height:32%;
+	width:100%;
+}
+.spacer-metode{
+	margin-top: -10%;
+}
+.hidden{
+	opacity: 0;
+}
+
+#scene-intro-1 h4 {
+	padding-top: 5%;
+}
+
+#glyphicons {
+	fill:white;
+	width:10%;
+}
+
+.arrows {
+	width:10%;
+	display: block;
+	margin:0 auto;
+	opacity: 1;
+}
+#arrow-down{
+	margin-top: -30px;
+}
+
+#scene-intro-1 {
+	padding:0 30px;
+}
+
+#scene-intro-1 h1 {
+	font-size:6em;
+}
+
+#scene-intro-1 h4 {
+	font-size: 3em;
+	color:white;
+	opacity: 1;
+}
+.half-scene {
+	height:50%;
+	width: :100%;
+}
+
+/* ________ TRAKT ________ */
+
+.trakt-scene{
+	height:100%;
+}
+.trakt {
+	max-width: 80%;
+	max-height: 100%;
+}
+#trakt-list-1 {
+	margin-top: -5%;
+}
+#trakt-list-2 {
+	margin-top: 10%;
+}
+#trakt-list-3 {
+	margin-top: 25%;
+}
+#trakt-list-4 {
+	margin-top: 40%;
+}
+
+/* ________ BRIKKER ________ */
+.brick-container {
+	height:100%;
+	width: 100%;
+}
+.brick-container img {
+	max-width:100%;
+}
+#brick-2-1, #brick-2-1 {
+	z-index: 2;
+}
+#brick-2, #brick-2-2 {
+	z-index: 3;
+/*	opacity: 0;
+*/	float:right;
+}
+	
+#brick-txt, #brick-2-txt {
+	z-index: 4;
+	font-size: 2.5em;
+}
+#brick-txt .left p, #brick-2-txt .left {
+	margin-left: 20%;
+}
+#brick-2-txt .left {
+	font-size: 10em;
+}
+#brick-3, #brick-2-3 {
+	z-index: 5;
+/*	opacity: 0;
+*/}
+#brick-4, #brick-2-4{
+	z-index: 6;
+	opacity: 0;
+	float:right;
+}
+.intro-container {
+	font-size: 2em;
+	margin-top: 0;
+}
+
+.intro-txt-big {
+	font-size:5em;
+	opacity: 1;
+	width:100%;
+	line-height: 1.2;
+	scale:1;
+	color: white;
+	margin-left: 20%;
+}
+
+#intro-4-span, #intro-41-span{
+	opacity: 0;
+}
+.white-bold {
+	color: white;
+	font-weight: bold;
+}
+.st0{
+	fill:#69C6AB;
+}
+.color-transistion-1s {
+	transition: fill 0.5s ease;
+}
+.source-number {
+	color:#FBEFB3;
+	display: inline-block;
+	font-size: 30em;
+	line-height: 0.7em;
+	vertical-align: top;
+}
+.question {
+	font-size: 6em;
+	text-align: center;
+	color:white;
+}
+#quest-1, #quest-2, #quest-3, #quest-4, #quest-5, #quest-6, #quest-7  {
+	opacity: 0;
+}
+#quest-3 {
+	font-size: 5.5em;
+}
+#quest-4, #quest-5, #quest-6, #quest-7 {
+	font-size: 5.5em;
+	line-height: 1em;
+	vertical-align: top;
+}
+.explanation {
+	width: 100%;
+	font-size: 2em;	
+}
+.txt-left {
+	text-align: left;
+	/*float:right;*/
+}
+#virkemidler-1, #konsekvenser-1 {
+	height:120%;
+}
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+    body { font-size:90%;}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+    body { font-size:80%;}
+}
+@media only screen and (min-width: 1100px) and (max-width: 1199px){
+    body { font-size:70%;}
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px){
+    body { font-size:60%;}
+}
+@media only screen and (min-width: 900px) and (max-width: 999px){
+    body { font-size:50%;}
+    .explanation {font-size: 2.5em;}
+}
+@media only screen and (min-width: 750px) and (max-width: 899px) {
+    body { font-size:50%;}
+    .explanation {font-size: 2.5em;}
+}
+@media only screen and (min-width: 600px) and (max-width: 749px) {
+    body { font-size:40%;}
+    .explanation {font-size: 3em;}
+}
+@media only screen and (max-width: 599px) {
+    body { font-size:30%;}
+    .explanation {font-size: 3em;}
+}
+
+
