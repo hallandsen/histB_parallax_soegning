@@ -124,6 +124,9 @@ h6.footerCopywrite {
 	max-width: 80%;
 	max-height: 100%;
 }
+#span-trakt-txt {
+	opacity: 0;
+}
 #trakt-list-1 {
 	margin-top: -5%;
 }
@@ -191,6 +194,9 @@ h6.footerCopywrite {
 #intro-4-span, #intro-41-span{
 	opacity: 0;
 }
+.white {
+	color:white;
+}
 .white-bold {
 	color: white;
 	font-weight: bold;
@@ -212,6 +218,7 @@ h6.footerCopywrite {
 	font-size: 6em;
 	text-align: center;
 	color:white;
+	line-height: 0.4;
 }
 #quest-1, #quest-2, #quest-3, #quest-4, #quest-5, #quest-6, #quest-7  {
 	opacity: 0;
@@ -219,21 +226,35 @@ h6.footerCopywrite {
 #quest-3 {
 	font-size: 5.5em;
 }
-#quest-4, #quest-5, #quest-6, #quest-7 {
+/*#quest-4, #quest-5, #quest-6, #quest-7 {
 	font-size: 5.5em;
 	line-height: 1em;
 	vertical-align: top;
+}*/
+
+.quest-txt-small{
+	font-size: 0.3em;
+	padding-left: 0.3em;
 }
+
 .explanation {
 	width: 100%;
-	font-size: 2em;	
+	font-size: 2em;
+	margin-top: -7%;
 }
 .txt-left {
 	text-align: left;
 	/*float:right;*/
 }
-#virkemidler-1, #konsekvenser-1 {
-	height:120%;
+
+/*METODEN KALDES*/
+#intro-brick-txt {
+	line-height: 1;
+}
+
+#dybt-txt a {
+	color:white;
+	text-decoration: underline;
 }
 
 /*MEDIA QUERIES*/

@@ -61,14 +61,16 @@
                     <div class="right">
                         <div class="spacer"></div>
                         <div class="intro-container" id="intro-container-3">
-                            <p>Når du arbejder med fortiden, har du brug for det rigtige historiske materiale, der kan svare på de spørgsmål, du gerne vil stille.<br>
+                            <p>Når du arbejder med fortiden, har du brug for det rigtige historiske materiale, der kan svare på de <span class="white-bold">spørgsmål</span>, du gerne vil stille.<br>
                             <span id="intro-4-span">For at finde det rigtige materiale, skal du vide hvad du leder efter, og hvor du skal lede.<br></span>
+                            <span id="intro-41-span">Og du skal vide <span class="white-bold">hvor</span> du skal lede.</span>
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="scene" id="scene-intro-6"></div>
+                <div class="scene" id="scene-intro-61"></div>
 <!-- TRAKT 1 -->
                 <div class="scene" id="trakt-1">
                         <img src="img/tragt1.png" class="trakt" alt="">
@@ -91,12 +93,14 @@
                     <div class="right">
                         <div class="spacer"></div>
                         <div class="intro-container" id="trakt-txt-container">
-                            <p>Du kan forestille dig, at din søgeproces er en tragt, hvor du hælder søgeord ned, som bliver mere og mere præcise, jo længere de kommer ned i tragten.</p>
+                            <p>Forestil dig, at din <span class="white-bold">søgeproces</span> er en tragt, som du hælder søgeord ned i.<br>
+                            <span id="span-trakt-txt">Ordene bliver mere og mere præcise, jo længere de kommer ned i tragten.</span></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="scene"></div>
+                <div class="scene" id="span-trakt-txt-trigger"></div>
+                <div class="half-scene"></div>
 
 
                 <div class="scene" id="scene-trakt-list-1">
@@ -151,7 +155,7 @@
                 <div class="scene"></div>
 
 <!-- METODEN KALDES... -->
-                <div class="scene" id="scene-intro-8">
+                <!-- <div class="scene" id="scene-intro-8">
                         <div class="left">
                             <div class="spacer"></div>
 
@@ -160,9 +164,9 @@
                             </div>
                         </div>
                         <div class="right"></div>
-                </div>
-                <div class="scene" id="scene-intro-9"></div>
-                <div class="scene"></div>
+                </div> -->
+                <!-- <div class="scene" id="scene-intro-9"></div>
+                <div class="scene"></div> -->
 
 <!-- BRIKKER BEGYNDER -->
 
@@ -181,7 +185,10 @@
                 <div class="brick-scene scene">
                     <div class="brick-container" id="brick-txt">
                         <div class="left">
-                            <p>Du samler puslespillet om kilden ved at se på de forskellige brikker i forhold til hinanden.</p>    
+                            <div class="spacer"></div>
+                            <div class="intro-container white" id="intro-brick-txt">
+                                <p>METODEN <br>KALDES <br>MATERIALESØGNING</p>
+                            </div>  
                         </div>
                         <div class="right"></div>
                     </div>
@@ -202,11 +209,11 @@
                 <div class="scene">
                     <p></p> 
                 </div>
-<!-- BRIKKER SLUTTER -->
+<!-- SPØRGSMÅLSTEGN SLUTTER -->
 
-<!-- 1. HVAD -->
+<!-- 1. HVAD VED JEG ALLEREDE -->
                 <div class="scene scene-spg" id="scene-2">
-                    <div class="left"> 
+                    <div class="left">
                         <div class="source-number" id="no-1">
                             <p>1</p>
                         </div>
@@ -214,9 +221,11 @@
 
 
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id='quest-1'>
                             <div class="txt-left">
-                                <p>HVAD?</p>
+                                <p>HVAD<br>
+                                <span class="quest-txt-small"> ved jeg allerede?</span></p>
                             </div>
                         </div>
                     </div>
@@ -226,9 +235,11 @@
                 <div class="scene-spg" id="scene-3">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-1">
                             <div class="explanation">
-                            <p>Skriv først nogle centrale stikord om dit emne, fx i et mind-map, så du bliver klar over, hvad du allerede ved.</p>
+                            <p>Skriv først nogle centrale stikord om dit emne.<br>
+                            <span id="hvad-txt">Brug evt. et <span class="white-bold">mind-map</span>, så du bliver klar over, hvad du allerede ved.</span></p>
                             </div>
                         </div>
                     </div>
@@ -238,17 +249,19 @@
                 </div>
                 <div class="half-scene"></div>
 
-<!-- 2. HVEM -->
+<!-- 2. HVOR LEDER JEG BREDT -->
                 <div class="scene scene-spg" id="scene-4">
-                    <div class="left">    
+                    <div class="left">
                         <div class="source-number" id="no-2">
                             <p>2</p>
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id='quest-2'>
                             <div class="txt-left">
-                                <p>HVEM?</p>
+                                <p>HVOR<br>
+                                <span class="quest-txt-small">leder jeg bredt?</span></p>
                             </div>
                         </div>
                     </div>
@@ -257,9 +270,11 @@
                 <div class="scene scene-spg" id="scene-5">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-2">
                             <div class="explanation">
-                                <p>Brug dine stikord til at søge viden på et oversigtsniveau. Du kan fx bruge Google, Wikipedia, Denstoredanske.dk eller andre brede søgemaskiner.</p>
+                                <p>Brug dine stikord til at søge viden på et <span class="white-bold">oversigtsniveau</span>.<br>
+                                <span id="2-txt">Du kan fx bruge Google, Wikipedia, Denstoredanske.dk eller andre “brede” søgemaskiner.</span></p>
                             </div>
                         </div>
                     </div>
@@ -267,9 +282,9 @@
                 <div class="scene">
                     <p></p> 
                 </div>
-                <div class="half-scene"></div>
+                <div class="scene"></div>
 
-<!-- 3. HVORNÅR -->
+<!-- 3. HVAD FÅR JEG UD AF MIN BREDE SØGNING -->
                 <div class="scene scene-spg" id="hvornaar-1">
                     <div class="left">
                         <div class="source-number" id="no-3">
@@ -277,9 +292,11 @@
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id="quest-3">
                             <div class="txt-left">
-                                <p>HVORNÅR?</p>
+                                <p>HVAD<br>
+                                <span class="quest-txt-small">får jeg ud af min brede søgning?</span></p>
                             </div>
                         </div>
                     </div>
@@ -289,6 +306,7 @@
                 <div class="scene scene-spg" id="hvornaar-2">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-3">
                             <div class="explanation">
                                 <p>Du får kvalificeret oversigtsviden, og kan stille mere præcise spørgsmål til dit emne.</p>
@@ -301,7 +319,7 @@
                 </div>
                 <div class="half-scene"></div>
 
-<!-- 4. TIL HVEM? -->
+<!-- 4. HVOR SØGER JEG DYBT -->
                 <div class="scene scene-spg" id="til-hvem-1">
                     <div class="left">
                         <div class="source-number" id="no-4">
@@ -309,24 +327,24 @@
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id="quest-4">
                             <div class="txt-left">
-                                <p>TIL<br>
-                                HVEM?</p>
+                                <p>HVOR<br>
+                                <span class="quest-txt-small">søger jeg dybt?</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
                 <div class="scene scene-spg" id="til-hvem-2">
-                    <!-- <p>til-hvem-2</p> -->
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-4">
                             <div class="explanation">
-                                <p>Hvem henvender kilden sig til?</p>
-                                <p>Du søger i dybden i faglige databaser som fx Danmarkshistorien.dk, EMU, Faktalink eller Kvinfo.</p>
+                                <p>Du søger i <span id="white-bold">dybden</span> i faglige databaser som fx<br>
+                                <span id="dybt-txt"> <a href="http://danmarkshistorien.dk/forside/">Danmarkshistorien.dk</a>, <a href="http://www.emu.dk/omraade/stx/fag/historie">EMU</a>, <a href="http://www.faktalink.dk/">Faktalink</a> eller <a href="http://kvinfo.dk/">Kvinfo</a>.</span></p>
                             </div>
                         </div>
                     </div>
@@ -337,7 +355,7 @@
                 <div class="half-scene"></div>
 
 
-<!-- 5. OM HVAD? -->
+<!-- 5. HVORDAN SØGER JEG DYBT? -->
                 <div class="scene scene-spg" id="om-hvad-1">
                     <div class="left">
                         <div class="source-number" id="no-5">
@@ -345,10 +363,11 @@
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id="quest-5">
                             <div class="txt-left">
-                                <p>OM<br>
-                                HVAD?</p>
+                                <p>HVORDAN<br>
+                                <span class="quest-txt-small">søger jeg dybt?</span></p>
                             </div>
                         </div>
                     </div>
@@ -357,9 +376,11 @@
                 <div class="scene scene-spg" id="om-hvad-2">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-5">
                             <div class="explanation">
-                                <p>Du skriver dine præcise søgeord i databasen, fx børnearbejde i 1800-tallet, tyendevalgret 1915, Slaget på Fælleden, Kanslergadeforliget, ungdomsoprøret, kvindebevægelsen eller hippier.</p>
+                                <p>Du skriver dine <span class="white-bold">præcise søgeord</span> i databasen,<br>
+                                <span id="hvordan-dybt-txt">fx børnearbejde i 1800-tallet, tyendevalgret 1915, Slaget på Fælleden, Kanslergadeforliget, ungdomsoprøret, kvindebevægelsen eller hippier.</span></p>
                             </div>
                         </div>
                     </div>
@@ -369,7 +390,7 @@
                 </div>
                 <div class="half-scene"></div>
 
-<!-- 6. HVILKE VIRKEMIDLER? -->
+<!-- 6. HVAD FÅR JEG UD AF MINE DYBE SØGNING -->
                 <div class="scene scene-spg" id="virkemidler-1">
                     <div class="left">
                         <div class="source-number" id="no-6">
@@ -377,11 +398,11 @@
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id="quest-6">
                             <div class="txt-left">
-                                <p>HVILKE<br>
-                                VIRKE-<br>
-                                MIDLER?</p>
+                                <p>HVAD<br>
+                                <span class="quest-txt-small">får jeg ud af min dybe søgning?</span></p>
                             </div>
                         </div>
                     </div>
@@ -390,9 +411,10 @@
                 <div class="scene scene-spg" id="virkemidler-2">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-6">
                             <div class="explanation">
-                                <p>Du får adgang til et materiale af både kilder og fremstillinger, som du fx kan bruge i en historieopgave.</p>
+                                <p>Du får adgang til et materiale af både kilder og fremstillinger, som du fx kan bruge i en <span class="white-bold">historieopgave</span>.</p>
                             </div>
                         </div>
                     </div>
@@ -402,7 +424,7 @@
                 </div>
                 <div class="half-scene"></div>
 
-<!-- 7. HVILKE KONSEKVENSER? -->
+<!-- 7. HVAD GØR JEG MED RESULTATET AF MIN SØGNING -->
                 <div class="scene scene-spg" id="konsekvenser-1">
                     <div class="left">
                         <div class="source-number" id="no-7">
@@ -410,11 +432,12 @@
                         </div>
                     </div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div class="question" id="quest-7">
                             <div class="txt-left">
-                                <p>HVILKE<br>
-                                KONSE-<br>
-                                KVENSER?</p>
+                                <p>HVAD<br>
+                                <span class="quest-txt-small">gør jeg med resultatet</span><br>
+                                <span class="quest-txt-small">af min søgning?</span></p>
                             </div>
                         </div>
                     </div>
@@ -423,9 +446,11 @@
                 <div class="scene scene-spg" id="konsekvenser-2">
                     <div class="left"></div>
                     <div class="right">
+                        <div class="spacer"></div>
                         <div id="expl-container-7">
                             <div class="explanation">
-                                <p>Du overvejer hvilke spørgsmål materialet kan svare på, og udvælger de kilder og det fremstillingsstof, du har brug for til dit emne eller din historieopgave.</p>
+                                <p>Du overvejer hvilke spørgsmål materialet kan <span class="white-bold">svare på</span>.<br>
+                                <span id="soge-resultat-txt">Og udvælger de kilder og det fremstillingsstof, du har brug for til dit emne eller din historieopgave.</span></p>
                             </div>
                         </div>
                     </div>
@@ -438,7 +463,7 @@
                 </div>
                 <div class="half-scene"></div>
 
-<!-- BRIKKER BEGYNDER -->
+<!-- SPØRGSMÅLSTEGN BEGYNDER igen -->
                 <!-- MELLEMRUM -->
                 <div class="scene">
                     <p></p> 
@@ -491,13 +516,13 @@
 
 <!-- OUTRO -->
          
-                <div class="scene" id="outro-1">
+               <!--  <div class="scene" id="outro-1">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer3"></div>
                         <div id="expl-container-8">
                             <div class="explanation">
-                                <p>Når du laver kildekritik, behøver du ikke svare på alle <span class="white-bold">spørgsmålene.</span></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione explicabo totam quia pariatur soluta quidem.<span class="white-bold">spørgsmålene.</span></p>
                                 <p><span id="outro-txt"> Men du skal have alle spørgsmålene i baghovedet, når du overvejer, hvad kilden kan bruges til.</span></p>
                             </div>
                         </div>
@@ -518,7 +543,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="scene"></div>
+                <div class="scene"></div> -->
 
                 <div class="scene" id="outro-fadeOut"></div>
             
