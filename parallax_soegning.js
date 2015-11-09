@@ -27,7 +27,7 @@ $(document).ready(function() {
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
 		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1})
-		.to('#arrow-down', 1, {opacity : 0, scale: 0.5, delay: 1});
+		.to('#arrow-down', 1, {opacity : 0, scale: 0.5, delay: -0.5});
 
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro2
@@ -55,21 +55,18 @@ $(document).ready(function() {
 	var intro1 = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-1',
 		triggerHook:'onLeave',
-		duration: '50%'
+		duration: '60%'
 	}).setPin('#intro-container-1');
 
-	//SECTION 2 - DU SKAL LÆRE EN METODE
+	//DU SKAL LÆRE EN METODE
 	var intro2 = new ScrollMagic.Scene({
-		triggerElement: '#arrow-down',
+		triggerElement: '#scene-intro-2 .left .spacer',
 		triggerHook:'onLeave',
-		//offset: '100',
 		duration: '430%'
 	}).setPin('#intro-container-2');
 
 	var intro2Time = new ScrollMagic.Scene({
 		triggerElement: '#arrow-down',
-		//triggerHook: 'onLeave',
-		// offset: '1000',
 		duration: '100%'
 	}).setTween(timeLineIntro2);
 
@@ -77,7 +74,6 @@ $(document).ready(function() {
 		triggerElement: '#scene-intro-4 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '330%'
-		//offset: "100"
 	}).setPin('#intro-container-3');
 
 	var intro2ExplfadeIn = new ScrollMagic.Scene({
@@ -570,7 +566,7 @@ controller.addScene([
 	var omHvadQuest = new ScrollMagic.Scene({
 		triggerElement: '#om-hvad-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '290%'
+	 	duration: '283%'
 	}).setPin('#quest-5');
 
 	var omHvadTime3 = new ScrollMagic.Scene({
@@ -628,7 +624,7 @@ controller.addScene([
 	var virkemidlerQuest = new ScrollMagic.Scene({
 		triggerElement: '#virkemidler-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '260%'
+	 	duration: '254%'
 	}).setPin('#quest-6');
 
 	var virkemidlerTime3 = new ScrollMagic.Scene({
@@ -687,7 +683,7 @@ controller.addScene([
 	var konsekvenserQuest = new ScrollMagic.Scene({
 		triggerElement: '#konsekvenser-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '410%'
+	 	duration: '400%'
 	}).setPin('#quest-7');
 
 	var konsekvenserTime3 = new ScrollMagic.Scene({
@@ -702,7 +698,7 @@ controller.addScene([
 	var konsekvenserExpl = new ScrollMagic.Scene({
 		triggerElement: '#konsekvenser-2 .right .spacer',
 		triggerHook:'onLeave',
-		duration: '283%'
+		duration: '280%'
 	}).setPin('#expl-container-7');
 
 //scener tilføjes til controller
@@ -870,13 +866,13 @@ controller.addScene([
 	var outro2Expl = new ScrollMagic.Scene({
 		triggerElement: '#outro-2 .right .spacer3',
 		triggerHook:'onLeave',
-		// offset:'145',
 		duration: '459%'
 	}).setPin('#expl-container-9', {pushFollowers: false});
 
 	var pinFooter = new ScrollMagic.Scene({
 		triggerElement: '#footer',
 		triggerHook:'onEnter',
+		offset:'50',
 		duration: '200%'
 	}).setPin('#footer');
 

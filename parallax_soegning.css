@@ -81,6 +81,9 @@ h6.footerCopywrite {
 #scene-intro-1 h4 {
 	padding-top: 5%;
 }
+#scene-intro-1 {
+	height:80%;
+}
 
 #glyphicons {
 	fill:white;
@@ -96,7 +99,9 @@ h6.footerCopywrite {
 #arrow-down{
 	margin-top: -3%;
 }
-
+.pile {
+	margin-top: -5%;
+}
 #scene-intro-1 {
 	padding:0 30px;
 }
@@ -139,7 +144,11 @@ h6.footerCopywrite {
 #trakt-list-4 {
 	margin-top: 40%;
 }
-
+.trakt-spacer {
+	display: none;
+	height:15%;
+	width: 100%;
+}
 /* ________ BRIKKER ________ */
 .brick-container {
 	height:100%;
@@ -278,14 +287,22 @@ h6.footerCopywrite {
 @media only screen and (min-width: 750px) and (max-width: 899px) {
     body { font-size:50%;}
     .explanation {font-size: 2.5em;}
+    .trakt-spacer {display: block; height:10%;}
 }
 @media only screen and (min-width: 600px) and (max-width: 749px) {
     body { font-size:40%;}
     .explanation {font-size: 3em;}
+    .trakt-spacer {display: block; height:10%;}
 }
-@media only screen and (max-width: 599px) {
+@media only screen and (min-width: 420px) and (max-width: 599px) {
     body { font-size:30%;}
     .explanation {font-size: 3em;}
+    .trakt-spacer {display: block; height:10%;}
+}
+@media only screen and (min-width: 10px) and (max-width: 419px) {
+    body { font-size:20%;}
+    .explanation {font-size: 3em;}
+    .trakt-spacer {display: block; height:10%;}
 }
 
 
