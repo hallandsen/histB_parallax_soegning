@@ -13,6 +13,9 @@ html,body {
 	max-width: 100%;
 	padding:0;
 }
+#scroll-wrapper{
+	position: relative;
+}
 h1 {
 	margin: 20px 0px; 
 	line-height: 1em;
@@ -78,13 +81,6 @@ h6.footerCopywrite {
 	opacity: 0;
 }
 
-#scene-intro-1 h4 {
-	padding-top: 5%;
-}
-#scene-intro-1 {
-	height:80%;
-}
-
 #glyphicons {
 	fill:white;
 	width:10%;
@@ -104,6 +100,7 @@ h6.footerCopywrite {
 }
 #scene-intro-1 {
 	padding:0 30px;
+	height:80%;
 }
 
 #scene-intro-1 h1 {
@@ -114,6 +111,7 @@ h6.footerCopywrite {
 	font-size: 3em;
 	color:white;
 	opacity: 1;
+	padding-top: 5%;
 }
 .half-scene {
 	height:50%;
@@ -162,8 +160,7 @@ h6.footerCopywrite {
 }
 #brick-2, #brick-2-2 {
 	z-index: 3;
-/*	opacity: 0;
-*/	float:right;
+	float:right;
 }
 	
 #brick-txt, #brick-2-txt {
@@ -178,11 +175,10 @@ h6.footerCopywrite {
 }
 #brick-3, #brick-2-3 {
 	z-index: 5;
-/*	opacity: 0;
-*/}
+
+}
 #brick-4, #brick-2-4{
 	z-index: 6;
-	opacity: 0;
 	float:right;
 }
 .intro-container {
@@ -213,9 +209,7 @@ h6.footerCopywrite {
 .st0{
 	fill:#69C6AB;
 }
-.color-transistion-1s {
-	transition: fill 0.5s ease;
-}
+
 .source-number {
 	color:#FBEFB3;
 	display: inline-block;
@@ -235,11 +229,6 @@ h6.footerCopywrite {
 #quest-3 {
 	font-size: 5.5em;
 }
-/*#quest-4, #quest-5, #quest-6, #quest-7 {
-	font-size: 5.5em;
-	line-height: 1em;
-	vertical-align: top;
-}*/
 
 .quest-txt-small{
 	font-size: 0.3em;
@@ -253,7 +242,6 @@ h6.footerCopywrite {
 }
 .txt-left {
 	text-align: left;
-	/*float:right;*/
 }
 
 /*METODEN KALDES*/
