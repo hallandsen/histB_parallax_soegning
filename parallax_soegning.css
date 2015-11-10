@@ -13,6 +13,15 @@ html,body {
 	max-width: 100%;
 	padding:0;
 }
+.scrollContainer .scrollContent {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.scrollContainer {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
 #scroll-wrapper{
 	position: relative;
 }
