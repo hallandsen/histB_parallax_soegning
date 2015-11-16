@@ -12,8 +12,8 @@ html,body {
 	height:100%;
 	max-width: 100%;
 	padding:0;
-	overflow: scroll;
 }
+
 .scrollContainer .scrollContent {
     width: 100%;
     height: auto;
@@ -302,5 +302,3 @@ h6.footerCopywrite {
     .explanation {font-size: 3em;}
     .trakt-spacer {display: block; height:10%;}
 }
-
-
