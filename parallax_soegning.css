@@ -281,25 +281,30 @@ h6.footerCopywrite {
 }
 @media only screen and (min-width: 900px) and (max-width: 999px){
     body { font-size:50%;}
-    .explanation {font-size: 2.5em;}
+    .explanation,  .intro-small, {font-size: 2.5em;}
+    li {font-size:1.5em;}
 }
 @media only screen and (min-width: 750px) and (max-width: 899px) {
     body { font-size:50%;}
-    .explanation {font-size: 2.5em;}
+    .explanation,  .intro-small {font-size: 2.5em;}
     .trakt-spacer {display: block; height:10%;}
+    li {font-size:1.5em;}
 }
 @media only screen and (min-width: 600px) and (max-width: 749px) {
     body { font-size:40%;}
-    .explanation {font-size: 3em;}
+    .explanation,  .intro-small {font-size: 3em;}
     .trakt-spacer {display: block; height:10%;}
+    li {font-size:1.5em;}
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
     body { font-size:30%;}
-    .explanation {font-size: 3em;}
+    .explanation,  .intro-small {font-size: 3em;}
     .trakt-spacer {display: block; height:10%;}
+    li {font-size:1.5em;}
 }
 @media only screen and (min-width: 10px) and (max-width: 419px) {
     body { font-size:20%;}
-    .explanation {font-size: 3em;}
+    .explanation,  .intro-small {font-size: 3em;}
     .trakt-spacer {display: block; height:10%;}
+    li {font-size:1.5em;}
 }

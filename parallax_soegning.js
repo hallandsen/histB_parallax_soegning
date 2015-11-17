@@ -21,15 +21,18 @@ $(document).ready(function() {
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
 		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1})
 		.to('#arrow-down', 1, {opacity : 0, scale: 0.5, delay: -0.5});
-	//Fade du skal lære metode ind
+	
+	//Fade in du skal lære metode ind
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro2
 		.from('#intro-container-2', 1, {opacity : 0, scale: 0, delay:0.4});
 
+	//Fade af intro-4-span
 	var timeLineIntro2span = new TimelineMax();
 	timeLineIntro2span
 		.to('#intro-4-span', 1, {opacity:1, ease:Power2.easeIn});
 
+	//Fade af intro-4-span
 	var timeLineIntro21span = new TimelineMax();
 	timeLineIntro2span
 		.to('#intro-41-span', 1, {opacity:1, ease:Power2.easeIn});
@@ -59,7 +62,8 @@ $(document).ready(function() {
 	}).setPin('#intro-container-2');
 
 	var intro2Time = new ScrollMagic.Scene({
-		triggerElement: '#arrow-down',
+		triggerElement: '#scene-intro-2 .left .spacer',
+		triggerHook:'onLeave',
 		duration: '100%'
 	}).setTween(timeLineIntro2);
 
@@ -294,7 +298,6 @@ $(document).ready(function() {
 
 	//scener
 	var scene1 = new ScrollMagic.Scene({
-		// triggerElement: '#no-1',
 		triggerElement: '#scene-2 .left .no-spacer',
 		triggerHook: 'onLeave',
 		duration: '100%'
