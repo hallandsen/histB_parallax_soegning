@@ -52,8 +52,7 @@ h6.footerCopywrite {
 	height:100%;
 	width:100%;
 	margin: 0px;
-/*	border-bottom: black solid 1px;
-*/	padding:0 30px;
+	padding:0 30px;
 }
 
 .scene-spg {
@@ -75,6 +74,9 @@ h6.footerCopywrite {
 .spacer {
 	height:30%;
 	width:100%;
+}
+.no-spacer {
+	height:20%;
 }
 .spacer2 {
 	height:5%;
@@ -232,12 +234,11 @@ h6.footerCopywrite {
 	text-align: center;
 	color:white;
 	line-height: 0.4;
+	opacity: 1;
+	font-size: 9em;
 }
-#quest-1, #quest-2, #quest-3, #quest-4, #quest-5, #quest-6, #quest-7  {
-	opacity: 0;
-}
-#quest-3 {
-	font-size: 5.5em;
+#quest-3, #quest-5 {
+	font-size: 8em;
 }
 
 .quest-txt-small{

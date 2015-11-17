@@ -13,48 +13,6 @@ $(document).ready(function() {
 		var controller = new ScrollMagic.Controller();
 	}
 
-// if(isMobile == true) {
-// 	var myScroll;
-// 	$(document).ready(function() {
-// 		// wrap for iScroll
-// 		// $('#scroll-wrapper')
-// 		// 	.addClass('scrollContainer')
-// 		// 	.wrapInner('<div class="scrollContent"></div>');
-// 		// add iScroll
-// 		myScroll = new IScroll('#scroll-wrapper',
-// 			{
-// 				scrollX:false,
-// 				scrollY:true,
-// 				scrollbars:true,
-// 				useTransform:false,
-// 				useTransition:false,
-// 				probeType:3,
-// 				clicks:true
-// 			}
-// 		);
-// 		//update container on scroll
-// 		myScroll.on('scroll',function(){
-// 			controller.update(true);
-// 		});
-
-// 		controller.scrollPos(function(){
-// 			return -myScroll.y;
-// 		});
-// 		//refresh height so all is included
-// 		setTimeout(function(){
-// 			myScroll.refresh();
-// 		}, 0);
-// 		//manual set height
-// 		$(document).trigger('orientationchange'); //trigger for init
-// 		//initier controller
-// 		controller = new ScrollMagic.Controller({container: '#scroll-wrapper'});
-// 	});
-// } else {
-// 		// initier controller
-// 		controller = new ScrollMagic.Controller();
-// }
-	
-
 ////////////////////////////////// INTRO //////////////////////////////////
 
 	//animationer der skal kaldes
@@ -324,8 +282,11 @@ $(document).ready(function() {
 	//spørgsmålet fader ind, vokser og bevæger sig
 	var timeLine1 = new TimelineMax();
 	timeLine1
-		.to('#quest-1', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-1', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-1', 3.7, {opacity : 0, scale: 0});
+
+	var timeLine2 = new TimelineMax();
+	timeLine2
+		.to('#quest-1', 5, {xPercent: -94, delay: 1, ease:Power2.easeOut});
 
 	//fade den forklarende tekst ind
 	var explFadeIn = new TimelineMax();
@@ -333,9 +294,10 @@ $(document).ready(function() {
 
 	//scener
 	var scene1 = new ScrollMagic.Scene({
-		triggerElement: '#no-1',
-		offset:'100',
-		duration: '30%'
+		// triggerElement: '#no-1',
+		triggerElement: '#scene-2 .left .no-spacer',
+		triggerHook: 'onLeave',
+		duration: '100%'
 	}).setPin('#no-1');
 
 	var scene1Time = new ScrollMagic.Scene({
@@ -344,10 +306,16 @@ $(document).ready(function() {
 	 	duration: '100%'
 	}).setTween(timeLine1);
 
+	var scene2Time = new ScrollMagic.Scene({
+		triggerElement: '#scene-2-1',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(timeLine2);
+
 	var scene1Quest = new ScrollMagic.Scene({
 		triggerElement: '#scene-2 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '283%'
+	 	duration: '384%'
 	}).setPin('#quest-1-pin');
 
 	var scene1Time3 = new ScrollMagic.Scene({
@@ -364,8 +332,7 @@ $(document).ready(function() {
 
 //scener tilføjes til controller
 	controller.addScene([
-		scene1, scene1Quest, scene1Time, 
-		//scene1Time2,
+		scene1, scene1Quest, scene1Time, scene2Time,
 		scene1Time3, scene2
 	]);
 
@@ -374,8 +341,12 @@ $(document).ready(function() {
 	//animationer der skal kaldes
 	var hvemFadeGrow = new TimelineMax();
 	hvemFadeGrow
-		.to('#quest-2', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-2', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-2', 3.7, {opacity : 0, scale: 0});
+
+	var hvemX = new TimelineMax();
+	hvemX
+		.to('#quest-2', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
+
 	
 	var hvemFadeIn = new TimelineMax();
 	hvemFadeIn
@@ -383,9 +354,9 @@ $(document).ready(function() {
 
 	//scener
 	var hvem1 = new ScrollMagic.Scene({
-		triggerElement: '#no-2',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#scene-4 .left .no-spacer',
+		triggerHook: 'onLeave',
+		duration: '100%'
 	}).setPin('#no-2');
 
 	var hvemTime = new ScrollMagic.Scene({
@@ -394,10 +365,16 @@ $(document).ready(function() {
 	 	duration: '100%'
 	}).setTween(hvemFadeGrow);
 
+	var hvemTime2 = new ScrollMagic.Scene({
+		triggerElement: '#scene-4-1',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(hvemX);
+
 	var hvemQuest = new ScrollMagic.Scene({
 		triggerElement: '#scene-4 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '330%'
+	 	duration: '430%'
 	}).setPin('#quest-2-pin');
 
 	var hvemTime3 = new ScrollMagic.Scene({
@@ -409,12 +386,12 @@ $(document).ready(function() {
 	var hvemExpl = new ScrollMagic.Scene({
 		triggerElement: '#scene-5 .right .spacer',
 		triggerHook:'onLeave',
-		duration: '209%'
+		duration: '210%'
 	}).setPin('#expl-container-2');
 
 //scener tilføjes til controller
 controller.addScene([
-		hvem1, hvemTime, hvemTime3, hvemQuest, hvemExpl
+		hvem1, hvemTime, ,hvemTime2, hvemTime3, hvemQuest, hvemExpl
 	]);
 
 
@@ -423,8 +400,11 @@ controller.addScene([
 	//animationer der skal kaldes
 	var hvornaarFadeGrow = new TimelineMax();
 	hvornaarFadeGrow
-		.to('#quest-3', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-3', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-3', 3.7, {opacity : 0, scale: 0});
+
+	var hvornaarX = new TimelineMax();
+	hvornaarX
+		.to('#quest-3', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 	
 	var hvornaarFadeIn1 = new TimelineMax();
 	hvornaarFadeIn1
@@ -433,9 +413,9 @@ controller.addScene([
 
 	//scener
 	var hvornaar1 = new ScrollMagic.Scene({
-		triggerElement: '#no-3',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#hvornaar-1 .left .no-spacer',
+		triggerHook:'onLeave',
+		duration: '100%'
 	}).setPin('#no-3');
 
 	var hvornaarTime = new ScrollMagic.Scene({
@@ -444,27 +424,33 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(hvornaarFadeGrow);
 
+	var hvornaarTime2 = new ScrollMagic.Scene({
+		triggerElement: '#hvornaar-2',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(hvornaarX);
+
 	var hvornaarQuest = new ScrollMagic.Scene({
 		triggerElement: '#hvornaar-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '280%'
+	 	duration: '376%'
 	}).setPin('#quest-3-pin');
 
 	var hvornaarTime3 = new ScrollMagic.Scene({
-		triggerElement: '#hvornaar-2',
+		triggerElement: '#hvornaar-3',
 		triggerHook: 'onLeave',
 	 	duration: '100%'
 	}).setTween(hvornaarFadeIn1);
 
 	var hvornaarExpl = new ScrollMagic.Scene({
-		triggerElement: '#hvornaar-2 .right .spacer',
+		triggerElement: '#hvornaar-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '156%'
 	}).setPin('#expl-container-3');
 
 //scener tilføjes til controller
 controller.addScene([
-		hvornaar1, hvornaarTime, hvornaarTime3, hvornaarQuest, hvornaarExpl
+		hvornaar1, hvornaarTime, hvornaarTime2, hvornaarTime3, hvornaarQuest, hvornaarExpl
 	]);
 
 // 4. HVOR SØGER JEG DYBT
@@ -473,8 +459,11 @@ controller.addScene([
 	//spørgsmålet fader ind, vokser og bevæger sig
 	var tilHvemFadeGrow = new TimelineMax();
 	tilHvemFadeGrow
-		.to('#quest-4', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-4', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-4', 3.7, {opacity : 0, scale: 0});
+
+	var tilHvemX = new TimelineMax();
+	tilHvemX
+		.to('#quest-4', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 	
 	//fade den forklarende tekst ind
 	var tilHvemFadeIn1 = new TimelineMax();
@@ -483,9 +472,9 @@ controller.addScene([
 
 	//scener
 	var tilHvem1 = new ScrollMagic.Scene({
-		triggerElement: '#no-4',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#til-hvem-1 .left .no-spacer',
+		triggerHook:'onLeave',
+		duration: '100%'
 	}).setPin('#no-4');
 
 	var tilHvemTime = new ScrollMagic.Scene({
@@ -494,14 +483,20 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(tilHvemFadeGrow);
 
+	var tilHvemTime2 = new ScrollMagic.Scene({
+		triggerElement: '#til-hvem-2',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(tilHvemX);
+
 	var tilHvemQuest = new ScrollMagic.Scene({
 		triggerElement: '#til-hvem-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '273%'
+	 	duration: '373%'
 	}).setPin('#quest-4-pin');
 
 	var tilHvemTime3 = new ScrollMagic.Scene({
-		triggerElement: '#til-hvem-2',
+		triggerElement: '#til-hvem-3',
 		offset:'200',
 		triggerHook: 'onLeave',
 	 	duration: '100%'
@@ -510,14 +505,14 @@ controller.addScene([
 	//uddybning pinnes og fades ind
 
 	var tilHvemExpl = new ScrollMagic.Scene({
-		triggerElement: '#til-hvem-2 .right .spacer',
+		triggerElement: '#til-hvem-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '153%'
 	}).setPin('#expl-container-4');
 
 //scener tilføjes til controller
 controller.addScene([
-		tilHvem1, tilHvemTime, tilHvemTime3, tilHvemQuest, tilHvemExpl
+		tilHvem1, tilHvemTime, tilHvemTime2, tilHvemTime3, tilHvemQuest, tilHvemExpl
 	]);
 
 // 5. HVORDAN SØGER JEG DYBT
@@ -525,8 +520,11 @@ controller.addScene([
 	//animationer der skal kaldes
 	var omHvadFadeGrow = new TimelineMax();
 	omHvadFadeGrow
-		.to('#quest-5', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-5', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-5', 3.7, {opacity : 0, scale: 0});
+
+	var omHvadX = new TimelineMax();
+	omHvadX
+		.to('#quest-5', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 	
 	var omHvadFadeIn1 = new TimelineMax();
 	omHvadFadeIn1
@@ -534,9 +532,9 @@ controller.addScene([
 
 	//scener
 	var omHvad1 = new ScrollMagic.Scene({
-		triggerElement: '#no-5',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#om-hvad-1 .left .no-spacer',
+		triggerHook:'onLeave',
+		duration: '100%'
 	}).setPin('#no-5');
 
 	var omHvadTime = new ScrollMagic.Scene({
@@ -545,14 +543,20 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(omHvadFadeGrow);
 
+	var omHvadTime2 = new ScrollMagic.Scene({
+		triggerElement: '#om-hvad-2',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(omHvadX);
+
 	var omHvadQuest = new ScrollMagic.Scene({
 		triggerElement: '#om-hvad-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '283%'
+	 	duration: '383%'
 	}).setPin('#quest-5-pin');
 
 	var omHvadTime3 = new ScrollMagic.Scene({
-		triggerElement: '#om-hvad-2',
+		triggerElement: '#om-hvad-3',
 		triggerHook: 'onLeave',
 		offset:'200',
 	 	duration: '100%'
@@ -561,14 +565,14 @@ controller.addScene([
 	//uddybning pinnes og fades ind
 
 	var omHvadExpl = new ScrollMagic.Scene({
-		triggerElement: '#om-hvad-2 .right .spacer',
+		triggerElement: '#om-hvad-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '163%'
 	}).setPin('#expl-container-5');
 
 //scener tilføjes til controller
 controller.addScene([
-		omHvad1, omHvadTime, omHvadTime3, omHvadQuest, omHvadExpl
+		omHvad1, omHvadTime, omHvadTime2, omHvadTime3, omHvadQuest, omHvadExpl
 	]);
 
 // 6. HVAD FÅR JEG UD AF MINE DYBE SØGNING
@@ -576,17 +580,20 @@ controller.addScene([
 	//animationer der skal kaldes
 	var virkemidlerFadeGrow = new TimelineMax();
 	virkemidlerFadeGrow
-		.to('#quest-6', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-6', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-6', 3.7, {opacity : 0, scale: 0});
+
+	var virkemidlerX = new TimelineMax();
+	virkemidlerX
+		.to('#quest-6', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 	
 	var virkemidlerFadeIn1 = new TimelineMax();
 	virkemidlerFadeIn1.from('#virkemidler-txt-1', 1, {opacity : 0});
 
 	//scener
 	var virkemidler1 = new ScrollMagic.Scene({
-		triggerElement: '#no-6',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#virkemidler-1 .left .no-spacer',
+		triggerHook:'onLeave',
+		duration: '100%'
 	}).setPin('#no-6');
 
 	var virkemidlerTime = new ScrollMagic.Scene({
@@ -595,14 +602,20 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(virkemidlerFadeGrow);
 
+	var virkemidlerTime2 = new ScrollMagic.Scene({
+		triggerElement: '#virkemidler-2',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(virkemidlerX);
+
 	var virkemidlerQuest = new ScrollMagic.Scene({
 		triggerElement: '#virkemidler-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '254%'
+	 	duration: '354%'
 	}).setPin('#quest-6-pin');
 
 	var virkemidlerTime3 = new ScrollMagic.Scene({
-		triggerElement: '#virkemidler-2',
+		triggerElement: '#virkemidler-3',
 		triggerHook: 'onLeave',
 		offset:'200',
 	 	duration: '100%'
@@ -611,14 +624,14 @@ controller.addScene([
 	//uddybning pinnes og fades ind
 
 	var virkemidlerExpl = new ScrollMagic.Scene({
-		triggerElement: '#virkemidler-2 .right .spacer',
+		triggerElement: '#virkemidler-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '134%'
 	}).setPin('#expl-container-6');
 
 //scener tilføjes til controller
 controller.addScene([
-		virkemidler1, virkemidlerTime, virkemidlerTime3, virkemidlerQuest, virkemidlerExpl
+		virkemidler1, virkemidlerTime, virkemidlerTime2, virkemidlerTime3, virkemidlerQuest, virkemidlerExpl
 	]);
 
 // 7. HVAD GØR JEG MED RESULTATET AF MIN SØGNING
@@ -626,8 +639,11 @@ controller.addScene([
 	//animationer der skal kaldes
 	var konsekvenserFadeGrow = new TimelineMax();
 	konsekvenserFadeGrow
-		.to('#quest-7', 3.7, {opacity : 1, scale: 1.5})
-		.to('#quest-7', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
+		.from('#quest-7', 3.7, {opacity : 0, scale: 0});
+
+	var konsekvenserX = new TimelineMax();
+	konsekvenserX
+		.to('#quest-7', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 
 	var konsekvenserFadeIn1 = new TimelineMax();
 	konsekvenserFadeIn1
@@ -635,9 +651,9 @@ controller.addScene([
 
 	//scener
 	var konsekvenser1 = new ScrollMagic.Scene({
-		triggerElement: '#no-7',
-		offset:'100',
-		duration: '30%'
+		triggerElement: '#konsekvenser-1 .left .no-spacer',
+		triggerHook:'onLeave',
+		duration: '100%'
 	}).setPin('#no-7');
 
 	var konsekvenserTime = new ScrollMagic.Scene({
@@ -646,14 +662,20 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(konsekvenserFadeGrow);
 
+	var konsekvenserTime2 = new ScrollMagic.Scene({
+		triggerElement: '#konsekvenser-2',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(konsekvenserX);
+
 	var konsekvenserQuest = new ScrollMagic.Scene({
 		triggerElement: '#konsekvenser-1 .right .spacer',
 		triggerHook:'onLeave',
-	 	duration: '400%'
+	 	duration: '500%'
 	}).setPin('#quest-7-pin');
 
 	var konsekvenserTime3 = new ScrollMagic.Scene({
-		triggerElement: '#konsekvenser-2',
+		triggerElement: '#konsekvenser-3',
 		triggerHook: 'onLeave',
 		offset:'200',
 	 	duration: '100%'
@@ -662,14 +684,14 @@ controller.addScene([
 	//uddybning pinnes og fades ind
 
 	var konsekvenserExpl = new ScrollMagic.Scene({
-		triggerElement: '#konsekvenser-2 .right .spacer',
+		triggerElement: '#konsekvenser-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '280%'
 	}).setPin('#expl-container-7');
 
 //scener tilføjes til controller
 controller.addScene([
-		konsekvenser1, konsekvenserTime, konsekvenserTime3, konsekvenserQuest, konsekvenserExpl
+		konsekvenser1, konsekvenserTime, konsekvenserTime2, konsekvenserTime3, konsekvenserQuest, konsekvenserExpl
 	]);
 
 
