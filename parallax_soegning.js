@@ -2,7 +2,6 @@ $(document).ready(function() {
 // init controller
 	var controller = new ScrollMagic.Controller();
 
-
 	var isMobile = (function(a){return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))})(navigator.userAgent||navigator.vendor||window.opera);
 	 console.log('isMobile ' + isMobile);
 
@@ -15,7 +14,7 @@ $(document).ready(function() {
 
 ////////////////////////////////// INTRO //////////////////////////////////
 
-	//animationer der skal kaldes
+//ANIMATIONER der skal kaldes
 	var timeLineIntro1 = new TimelineMax();
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
@@ -25,7 +24,7 @@ $(document).ready(function() {
 	//Fade in du skal lære metode ind
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro2
-		.from('#intro-container-2', 1, {opacity : 0, scale: 0, delay:0.4});
+		.from('#intro-container-2', 1, {opacity : 0, scale: 0, delay:-1});
 
 	//Fade af intro-4-span
 	var timeLineIntro2span = new TimelineMax();
@@ -41,50 +40,53 @@ $(document).ready(function() {
 	timeLineIntro3
 		.from('#intro-container-4', 1, {opacity : 0, scale: 0});
 
-	//scenes
-	var intro1Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-1',
-		triggerHook:'onLeave',
-		duration: '100%'
-	}).setTween(timeLineIntro1);
+//SCENER
 
 	var intro1 = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-1',
 		triggerHook:'onLeave',
 		duration: '60%'
 	}).setPin('#intro-container-1');
+	
+	var intro1Time = new ScrollMagic.Scene({
+		triggerElement: '#scene-intro-1',
+		triggerHook:'onLeave',
+		duration: '100%'
+	}).setTween(timeLineIntro1); //animation indsættes i parantes
 
-	//DU SKAL LÆRE EN METODE
+	//DU SKAL LÆRE EN METODE pinnes
 	var intro2 = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-2 .left .spacer',
 		triggerHook:'onLeave',
 		duration: '380%'
 	}).setPin('#intro-container-2');
 
+	//du skal lære... fades ind
 	var intro2Time = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-2 .left .spacer',
 		triggerHook:'onLeave',
 		duration: '100%'
-	}).setTween(timeLineIntro2);
+	}).setTween(timeLineIntro2); //animation indsættes i parantes
 
 	var intro2Expl = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-4 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '330%'
-	}).setPin('#intro-container-3');
+	}).setPin('#intro-container-3'); // forklarende tekst pinnes
 
 	var intro2ExplfadeIn = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-6',
 		triggerHook: 'onEnter',
 		duration: '100%'
-	}).setTween(timeLineIntro2span);
+	}).setTween(timeLineIntro2span); //animation indsættes i parantes
 
 	var intro21ExplfadeIn = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-61',
 		triggerHook: 'onEnter',
 		duration: '100%'
-	}).setTween(timeLineIntro21span);
+	}).setTween(timeLineIntro21span); //animation indsættes i parantes
 
+	//scener (og ingen animationer) tilføjes til controlleren
 	controller.addScene([
 		intro1,intro1Time,
 		intro2, intro2Time, intro2Expl, intro2ExplfadeIn, intro21ExplfadeIn,
@@ -168,16 +170,6 @@ $(document).ready(function() {
 //SPØRGSMÅLSTEGN BEGYNDER
 
 	//animationer der skal kaldes
-	
-	var brick2FadeIn = new TimelineMax();
-	brick2FadeIn.to('#brick-2', 1, {opacity: 1});
-
-	var brick3FadeIn = new TimelineMax();
-	brick3FadeIn.to('#brick-3', 1, {opacity: 1});
-
-	var brick4FadeIn = new TimelineMax();
-	brick4FadeIn.to('#brick-4', 1, {opacity: 1});
-
 	var brick1Parallax = new TimelineMax();
 	brick1Parallax.to('#brick-1', 1, {y:'-40%', ease: Linear.easeNone});
 
@@ -222,7 +214,6 @@ $(document).ready(function() {
 
 	
 	var brikkerTekst = new ScrollMagic.Scene({
-
 		triggerElement: '#brick-txt',
 		duration: '360%'
 	}).setPin('#brick-txt', {pushFollowers: false});
@@ -249,7 +240,6 @@ $(document).ready(function() {
 	var brikker4 = new ScrollMagic.Scene({
 		triggerElement: '#brick-4',
 		triggerHook:'onLeave',
-		// offset:'300',
 		duration: '200%'
 	}).setPin('#brick-4', {pushFollowers: false});
 
@@ -284,12 +274,12 @@ $(document).ready(function() {
 	//animationer der skal kaldes
 
 	//spørgsmålet fader ind, vokser og bevæger sig
-	var timeLine1 = new TimelineMax();
-	timeLine1
+	var spg1Fade = new TimelineMax();
+	spg1Fade
 		.from('#quest-1', 3.7, {opacity : 0, scale: 0});
 
-	var timeLine2 = new TimelineMax();
-	timeLine2
+	var spg1X = new TimelineMax();
+	spg1X
 		.to('#quest-1', 5, {xPercent: -94, delay: 1, ease:Power2.easeOut});
 
 	//fade den forklarende tekst ind
@@ -303,35 +293,35 @@ $(document).ready(function() {
 		duration: '100%'
 	}).setPin('#no-1');
 
-	var scene1Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-2',
-		offset:'300',
-	 	duration: '100%'
-	}).setTween(timeLine1);
-
-	var scene2Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-2-1',
-		offset:'300',
-	 	duration: '100%'
-	}).setTween(timeLine2);
-
 	var scene1Quest = new ScrollMagic.Scene({
 		triggerElement: '#scene-2 .right .spacer',
 		triggerHook:'onLeave',
 	 	duration: '384%'
 	}).setPin('#quest-1-pin');
 
-	var scene1Time3 = new ScrollMagic.Scene({
-		triggerElement: '#scene-3',
-		triggerHook: 'onLeave',
+	var scene1Time = new ScrollMagic.Scene({
+		triggerElement: '#scene-2',
+		offset:'300',
 	 	duration: '100%'
-	}).setTween(explFadeIn);
+	}).setTween(spg1Fade);
+
+	var scene2Time = new ScrollMagic.Scene({
+		triggerElement: '#scene-2-1',
+		offset:'300',
+	 	duration: '100%'
+	}).setTween(spg1X);
 
 	var scene2 = new ScrollMagic.Scene({
 		triggerElement: '#scene-3 .right .spacer',
 		triggerHook:'onLeave',
 		duration: '164%'
 	}).setPin('#expl-container-1');
+
+	var scene1Time3 = new ScrollMagic.Scene({
+		triggerElement: '#scene-3',
+		triggerHook: 'onLeave',
+	 	duration: '100%'
+	}).setTween(explFadeIn);
 
 //scener tilføjes til controller
 	controller.addScene([
@@ -521,16 +511,16 @@ controller.addScene([
 // 5. HVORDAN SØGER JEG DYBT
 
 	//animationer der skal kaldes
-	var omHvadFadeGrow = new TimelineMax();
-	omHvadFadeGrow
+	var omspg1FadeGrow = new TimelineMax();
+	omspg1FadeGrow
 		.from('#quest-5', 3.7, {opacity : 0, scale: 0});
 
-	var omHvadX = new TimelineMax();
-	omHvadX
+	var omspg1X = new TimelineMax();
+	omspg1X
 		.to('#quest-5', 5, {xPercent: -96, delay: 1, ease:Power2.easeOut});
 	
-	var omHvadFadeIn1 = new TimelineMax();
-	omHvadFadeIn1
+	var omspg1FadeIn1 = new TimelineMax();
+	omspg1FadeIn1
 	.from('#hvordan-dybt-txt', 1, {opacity : 0});
 
 	//scener
@@ -544,13 +534,13 @@ controller.addScene([
 		triggerElement: '#om-hvad-1',
 		offset:'300',
 	 	duration: '100%'
-	}).setTween(omHvadFadeGrow);
+	}).setTween(omspg1FadeGrow);
 
 	var omHvadTime2 = new ScrollMagic.Scene({
 		triggerElement: '#om-hvad-2',
 		offset:'300',
 	 	duration: '100%'
-	}).setTween(omHvadX);
+	}).setTween(omspg1X);
 
 	var omHvadQuest = new ScrollMagic.Scene({
 		triggerElement: '#om-hvad-1 .right .spacer',
@@ -563,7 +553,7 @@ controller.addScene([
 		triggerHook: 'onLeave',
 		offset:'200',
 	 	duration: '100%'
-	}).setTween(omHvadFadeIn1);
+	}).setTween(omspg1FadeIn1);
 
 	//uddybning pinnes og fades ind
 
